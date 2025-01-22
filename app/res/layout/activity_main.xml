@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+MIT License
+
+Copyright (c) 2025 Greg Renda
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:keepScreenOn="true"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <org.renda.portal.MyWebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"/>
+
+    <org.renda.portal.ScreenSaver
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+	android:visibility="gone"
+	android:gravity="center"
+	android:lineSpacingMultiplier=".90"
+        android:id="@+id/screenSaver"/>
+
+    <org.renda.portal.AppSettings
+        android:id="@+id/settings"
+	android:visibility="gone"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+      <TableLayout
+	  android:layout_width="match_parent"
+	  android:layout_height="match_parent"
+	  android:stretchColumns="1">
+
+	<TableRow>
+	  <TextView
+	      android:gravity="center"
+	      android:textSize="25sp"
+	      android:layout_span="2"
+	      android:text="Settings"/>
+	</TableRow>
+
+	<View
+            android:layout_height="2dp"
+            android:background="#FF909090"/>
+
+	<TableRow
+	    android:layout_marginTop="20dp">
+	  <TextView
+	      android:layout_marginRight="10dp"
+	      android:layout_gravity="center"
+	      android:textAppearance="?android:textAppearanceMedium"
+	      android:text="URL"/>
+	  <EditText
+	      android:id="@+id/url"
+              android:hint="http://example.com"
+              android:inputType="textUri"/>
+	</TableRow>
+
+	<TableRow>
+	  <TextView
+	      android:layout_marginRight="10dp"
+	      android:layout_gravity="center"
+	      android:textAppearance="?android:textAppearanceMedium"
+	      android:text="MQTT Broker"/>
+	  <EditText
+	      android:id="@+id/broker"
+              android:hint="broker:1883"
+              android:inputType="text"/>
+	</TableRow>
+
+	<TableRow>
+	  <TextView
+	      android:layout_marginRight="10dp"
+	      android:layout_gravity="center"
+	      android:textAppearance="?android:textAppearanceMedium"
+	      android:text="Inside Temperature Topic"/>
+	  <EditText
+	      android:id="@+id/insideTemperatureTopic"
+              android:hint="temperature/inside"
+              android:inputType="text"/>
+	</TableRow>
+
+	<TableRow>
+	  <TextView
+	      android:layout_marginRight="10dp"
+	      android:layout_gravity="center"
+	      android:textAppearance="?android:textAppearanceMedium"
+	      android:text="Outside Temperature Topic"/>
+	  <EditText
+	      android:id="@+id/outsideTemperatureTopic"
+              android:hint="temperature/outside"
+              android:inputType="text"/>
+	</TableRow>
+
+	<TableRow>
+	  <TextView
+	      android:layout_marginRight="10dp"
+	      android:layout_gravity="center"
+	      android:textAppearance="?android:textAppearanceMedium"
+	      android:text="Topic Timeout"/>
+	  <EditText
+	      android:id="@+id/topicTimeout"
+              android:hint="seconds"
+              android:inputType="number"/>
+	</TableRow>
+
+	<TableRow>
+	  <TextView
+	      android:layout_marginRight="10dp"
+	      android:layout_gravity="center"
+	      android:textAppearance="?android:textAppearanceMedium"
+	      android:text="Screen Saver Timeout"/>
+	  <EditText
+	      android:id="@+id/screenSaverTimeout"
+              android:hint="seconds"
+              android:inputType="number"/>
+	</TableRow>
+
+	<TableRow>
+	  <TextView
+	      android:layout_marginRight="10dp"
+	      android:layout_gravity="center"
+	      android:textAppearance="?android:textAppearanceMedium"
+	      android:text="Screen Saver Brightness"/>
+	  <EditText
+	      android:id="@+id/screenSaverBrightness"
+              android:hint="percent"
+              android:inputType="number"/>
+	</TableRow>
+
+	<TableRow>
+	  <TextView
+	      android:layout_marginRight="10dp"
+	      android:layout_gravity="center"
+	      android:textAppearance="?android:textAppearanceMedium"
+	      android:text="Screen Saver Font Size"/>
+	  <EditText
+	      android:id="@+id/screenSaverFontSize"
+              android:hint="scalable pixels"
+              android:inputType="number"/>
+	</TableRow>
+
+	<TableRow>
+	  <TextView
+	      android:layout_marginRight="10dp"
+	      android:layout_gravity="center"
+	      android:textAppearance="?android:textAppearanceMedium"
+	      android:text="Screen Saver Color"/>
+	  <EditText
+	      android:id="@+id/screenSaverColor"
+              android:hint="color or #rrggbb"
+              android:inputType="text"/>
+	</TableRow>
+
+	<View
+	    android:layout_marginTop="20dp"
+            android:layout_height="2dp"
+            android:background="#FF909090"/>
+
+	<TableRow
+	    android:layout_marginTop="20dp">
+	  <LinearLayout
+	      android:gravity="center"
+	      android:layout_span="2">
+	    <Button
+		android:id="@+id/buttonSave"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Save"/>
+	    <Button
+		android:id="@+id/buttonCancel"
+		android:layout_marginLeft="100dp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Cancel"/>
+	    <Button
+		android:id="@+id/buttonImport"
+		android:layout_marginLeft="100dp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Import"/>
+	    <Button
+		android:id="@+id/buttonExport"
+		android:layout_marginLeft="100dp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Export"/>
+	    <TextView
+		android:id="@+id/info"
+		android:gravity="center"
+		android:layout_marginLeft="75dp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"/>
+	  </LinearLayout>
+	</TableRow>
+      </TableLayout>
+    </org.renda.portal.AppSettings>
+</LinearLayout>
