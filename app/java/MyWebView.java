@@ -33,7 +33,6 @@ import android.os.CountDownTimer;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebSettings;
-import java.util.Map;
 
 public class MyWebView extends WebView
 {

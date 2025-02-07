@@ -1,5 +1,5 @@
 # Portal
-An android application that displays a web-based dashboard with a screen saver.
+An Android application that displays a web-based dashboard with a screen saver.
 
 ## Features
 

@@ -44,7 +44,6 @@ import android.graphics.Color;
 import java.util.Date;
 import java.util.Random;
 import java.util.Objects;
-import java.util.Map;
 
 public class ScreenSaver extends TextView
 {
