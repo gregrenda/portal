@@ -86,6 +86,14 @@ public class MainActivity extends Activity
 	hideSystemUI();
     }
 
+    @Override
+    public void onPause()
+    {
+	super.onPause();
+
+	setVisibleView(R.id.webView);
+    }
+
     public void setVisibleView(int viewId)
     {
 	for (int id : new int[] { R.id.webView, R.id.settings,
