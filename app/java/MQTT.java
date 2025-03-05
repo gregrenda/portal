@@ -169,8 +169,6 @@ public class MQTT
 	    }
 	    catch (Exception e)
 	    {
-		e.printStackTrace();
-		break;
 	    }
 
 	    if (thread.isInterrupted())
