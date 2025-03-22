@@ -91,7 +91,11 @@ public class MainActivity extends Activity
     {
 	super.onPause();
 
-	setVisibleView(R.id.webView);
+	// if the screen saver is active, turn it off
+	if (findViewById(R.id.screenSaver).getVisibility() == View.VISIBLE)
+	{
+	    setVisibleView(R.id.webView);
+	}
     }
 
     public void setVisibleView(int viewId)
